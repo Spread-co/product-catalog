@@ -1587,6 +1587,12 @@ export default {
   border-top-color: var(--spread-accent);
 }
 
+@media (max-width: 479px) {
+  .spread-catalog { padding: 12px; }
+}
+@media (min-width: 480px) {
+  .spread-catalog { padding: 16px; }
+}
 @keyframes spread-catalog-spin {
   to { transform: rotate(360deg); }
 }

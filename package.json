@@ -1,9 +1,9 @@
 {
   "name": "spread-product-catalog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Full-page product catalog with search, category filter, responsive grid, pagination, and access gating for Spread.co",
   "scripts": {
-    "build": "weweb build --name=spread-product-catalog --type=element",
+    "build": "weweb build -- name=spread-product-catalog type=element",
     "serve": "weweb serve"
   },
   "devDependencies": {

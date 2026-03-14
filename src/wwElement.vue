@@ -233,7 +233,7 @@
           <div class="spread-catalog__card-body">
             <h3 class="spread-catalog__card-name">{{ product.name }}</h3>
             <p class="spread-catalog__card-desc" v-if="product.description">
-              {{ truncate(product.description, 60) }}
+              {{ truncate(product.description, 40) }}
             </p>
 
             <!-- Price -->
@@ -1221,12 +1221,8 @@ export default {
 /* ---- Product grid ---- */
 .spread-catalog__grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
-}
-
-@media (min-width: 520px) {
-  .spread-catalog__grid { grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
@@ -1237,10 +1233,29 @@ export default {
   .spread-catalog__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* When no sidebar, go to 4 columns on large screens */
+@media (min-width: 1280px) {
+  .spread-catalog__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1440px) {
+  .spread-catalog__grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Without sidebar: always one step wider */
 .spread-catalog:not(.spread-catalog--with-sidebar) .spread-catalog__grid {
-  @media (min-width: 768px) { grid-template-columns: repeat(3, 1fr); }
-  @media (min-width: 1024px) { grid-template-columns: repeat(4, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .spread-catalog:not(.spread-catalog--with-sidebar) .spread-catalog__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .spread-catalog:not(.spread-catalog--with-sidebar) .spread-catalog__grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1280px) {
+  .spread-catalog:not(.spread-catalog--with-sidebar) .spread-catalog__grid { grid-template-columns: repeat(5, 1fr); }
+}
+@media (min-width: 1440px) {
+  .spread-catalog:not(.spread-catalog--with-sidebar) .spread-catalog__grid { grid-template-columns: repeat(6, 1fr); }
 }
 
 /* ---- Card (inline — matches spread-product-card design) ---- */
@@ -1333,7 +1348,7 @@ export default {
 
 /* Card body */
 .spread-catalog__card-body {
-  padding: 12px 14px 14px;
+  padding: 10px 10px 12px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1352,6 +1367,10 @@ export default {
   color: var(--spread-text-tertiary);
   line-height: 1.5;
   margin: 0 0 8px;
+}
+
+@media (min-width: 1280px) {
+  .spread-catalog__card-desc { display: none; }
 }
 
 .spread-catalog__card-price-row {

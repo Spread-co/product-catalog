@@ -748,7 +748,7 @@ export default {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 16px 24px 0;
   box-sizing: border-box;
 }
 
@@ -1640,4 +1640,25 @@ export default {
 [data-tooltip]:focus-visible::after,
 [data-tooltip]:hover::before,
 [data-tooltip]:focus-visible::before { opacity: 1; }
+
+/* ── Dark mode ─────────────────────────────────────────────────────── */
+:global(html.dark) .spread-catalog {
+  --spread-background: #000000;
+  --spread-border: rgba(230, 216, 202, 0.12);
+  --spread-border-outer: rgba(230, 216, 202, 0.15);
+  --white: #18181b;
+  --dark-grey: #e6d8ca;
+  --mid-grey: rgba(230, 216, 202, 0.55);
+  --light-grey: rgba(230, 216, 202, 0.4);
+  background: #000000;
+  color: #f5f0eb;
+}
+:global(html.dark) .spread-catalog__sidebar { background: #18181b; border-color: rgba(230,216,202,0.12); }
+:global(html.dark) .spread-catalog__filter-chip { background: #27272a; border-color: rgba(230,216,202,0.15); color: rgba(230,216,202,0.7); }
+:global(html.dark) .spread-catalog__filter-chip--active { background: #4b162d; border-color: #4b162d; color: #f5f0eb; }
+:global(html.dark) .spread-catalog__search { background: #1f1218; border-color: rgba(230,216,202,0.15); color: #f5f0eb; }
+:global(html.dark) .spread-catalog__search::placeholder { color: rgba(230,216,202,0.35); }
+:global(html.dark) .spread-catalog__section-title { color: rgba(230,216,202,0.5); }
+:global(html.dark) .spread-catalog__empty { color: rgba(230,216,202,0.5); }
+:global(html.dark) .spread-catalog__error-bg { background: rgba(209,67,67,0.08); border-color: rgba(209,67,67,0.25); color: #fca5a5; }
 </style>
